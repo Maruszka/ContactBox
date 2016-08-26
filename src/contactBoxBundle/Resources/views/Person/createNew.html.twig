@@ -1,0 +1,11 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Contact Box {% endblock %}
+
+{% block contact %}
+
+    <div class ="well">{{form_start(form)}}</div>
+    <div class ="well">{{form_widget(form)}}</div>
+    <div class ="well">{{form_end(form)}}</div>
+    <a class="button" href="{{ url('contactbox_person_showallcontacts')}}">Show all contacts</a>
+{% endblock %}

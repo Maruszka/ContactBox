@@ -1,0 +1,10 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}contactBoxBundle:Email:addEmail{% endblock %}
+
+{% block contact %}
+<h1>Add new email address: </h1>
+    <div class ="well">{{form_start(formEmail)}}</div>
+    <div class ="well">{{form_widget(formEmail)}}</div>
+    <div class ="well">{{form_end(formEmail)}}</div>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Edit information about email{% endblock %}
+
+{% block contact %}
+
+    <div class ="well">{{form_start(formEmail)}}</div>
+    <div class ="well">{{form_widget(formEmail)}}</div>
+    <div class ="well">{{form_end(formEmail)}}</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+
+{% block list %}
+    <tbody>
+        <tr> 
+{#            <th><h4>Phone:</h4> </th>
+            <th></th>
+            <th> </th>
+            <th> </th>
+            <th> </th>
+            <th> </th>
+            <th> </th>
+            <th> </th> #}            
+
+        </tr>
+        <tr> 
+            <th> Phone number </th>
+            <th> Type </th>
+            <th> </th>
+            <th> </th>
+            <th> </th>
+            <th> </th>
+            <th> </th>
+            <th> </th>                         
+        </tr>
+        <tr> 
+            <td> {{phone.number}}</td>
+            <td> {{phone.type}}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><a class="btn btn-info" role="button" href="{{url("contactbox_phone_editphone", {"id":phone.id})}}">Edit</a></td>
+            <td><a class="btn btn-danger" role="button" href="{{url("contactbox_phone_deletephone", {"id":phone.id})}}">Delete</a></td>
+            <td><a class="btn btn-primary" role="button" href="{{url("contactbox_phone_addphone", {"id":person.id})}}">Add Phone</a></td>
+        </tr>
+    </tbody>
+{% endblock %}

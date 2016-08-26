@@ -1,0 +1,29 @@
+
+{% block list %}
+
+        <tr> 
+    
+
+        </tr>
+        <tr> 
+            <th> Email </th>
+            <th> Type </th>
+            <th> </th>
+            <th> </th>
+            <th> </th>
+            <th> </th>
+            <th> </th>
+            <th> </th>             
+
+        </tr>
+        <tr> <td> {{email.email}}{{email}}</td>
+            <td> {{ email.type}}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><a class="btn btn-info" role="button" href="{{url("contactbox_email_editemail", {"id":email.id})}}">Edit</a></td>
+            <td><a class="btn btn-danger" role="button" href="{{url("contactbox_email_deleteemail", {"id":email.id})}}">Delete</a></td>
+            <th><a class="btn btn-primary" role="button" href="{{url("contactbox_email_addemail", {"id":person.id})}}">Add Email</a></th>
+        </tr>
+
+{% endblock %}

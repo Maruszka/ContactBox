@@ -1,0 +1,41 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}contactBoxBundle:Person:showAllContacts{% endblock %}
+
+{% block contactList %}
+
+    <tbody>
+        <tr>
+            <th>Picture</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Description</th>
+            <th></th>
+            <th></th>
+        </tr>
+        {% for person in allPersons%}
+            <tr>
+                <td>
+                    brak zdjecia
+                </td>
+                <td>
+                    <a href="{{url("contactbox_person_showoneperson", {"id":person.id})}}">{{person.name}}</a>
+                </td>
+                <td>
+                    <a href="{{url("contactbox_person_showoneperson", {"id":person.id})}}">{{person.surname}}</a>
+                </td>
+                <td>
+                    <a href="{{url("contactbox_person_showoneperson", {"id":person.id})}}">{{person.description}}</a>
+                </td>
+                <td>
+                    <a  class="btn btn-info" role="button" href="{{url("contactbox_person_editperson", {"id":person.id})}}">Edit</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger" role="button" href="{{url("contactbox_person_deleteperson", {"id":person.id})}}">Delete</a>
+                </td>
+            </tr>
+        {%else %}
+            <tr>Such contact does not exist</tr>
+        {%endfor%}
+    </tbody>
+{% endblock %}

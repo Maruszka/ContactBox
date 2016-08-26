@@ -1,0 +1,63 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Person details{% endblock %}
+
+{% block headContact %}
+    {#<div class ="row">#}
+    <div class="panel panel-default">
+
+        <div class = "panel-heading ">
+            <h4>Person: {{person.name}} {{person.surname}}</h4> 
+        </div>
+        <div class="panel-body">
+            <p>{{person.description}}</p> 
+        </div>
+        <div class="panel-footer">
+            <div class="btn-group">
+
+            <a class="btn btn-info " role="button" href="{{url("contactbox_person_editperson", {"id":person.id})}}">Edit</a>
+            <a class="btn btn-danger " role="button" href="{{url("contactbox_person_deleteperson", {"id":person.id})}}">Delete</a>
+            </div>
+
+        </div>
+
+
+
+    </div>
+    {#    </div>#}
+{% endblock %}
+{% block contactList %}
+    
+
+    {% if person.addresses == null %}
+
+        <a class="btn btn-primary" role="button" href="{{url("contactbox_address_createnewadress", {"id":person.id})}}">Add Address</a>
+    {%else%}
+
+        {%for address in addresses %}
+            {% include "contactBoxBundle:Address:showAddress.html.twig" with {"idAddress":address.id}%}
+        {% endfor%}
+
+    {% endif %}  
+
+    {% if person.emails == null %}
+        <a class="btn btn-primary" role="button" href="{{url("contactbox_email_addemail", {"id":person.id})}}">Add Email</a>
+    {%else%}
+        {%for email in emails %}
+            {% include "contactBoxBundle:Email:showEmail.html.twig" with {"id":email.id}%}
+        {% endfor%}
+    {% endif %} 
+
+
+
+    {% if person.phones == null %}
+
+        <a class="btn btn-primary" role="button" href="{{url("contactbox_phone_addnewphone", {"id":person.id})}}">Add Phone</a>
+    {%else%}
+        {%for phone in phones %}
+            {% include "contactBoxBundle:Phone:showPhone.html.twig" with {"id":phone.id}%}
+        {% endfor%}
+    {% endif %}  
+
+
+{% endblock %}

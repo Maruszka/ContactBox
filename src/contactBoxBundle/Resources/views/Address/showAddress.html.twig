@@ -1,0 +1,33 @@
+
+{% block list %}
+    <tbody>
+
+        <tr> <th> City </th>
+            <th> Street </th>
+            <th> House No. </th>
+            <th> Flat No. </th>
+            <th> Type </th>
+            <th> </th>
+            <th> </th>
+            <th> </th>
+        </tr>
+
+
+        <tr> 
+            <td>{{address.city}}</td>
+            <td>{{address.street}}</td>
+            <td>{{address.houseNumber}}</td>
+            <td>{{address.flatNumber}}</td> 
+            <td> {{address.type}}</td>
+
+            <td><a class="btn btn-info" role="button" href="{{url("contactbox_address_editaddress", {"idAddress":address.id})}}">Edit</a></td>
+            <td><a class="btn btn-danger" role="button" href="{{url("contactbox_address_deleteaddress", {"idAddress":address.id})}}">Delete</a></td>
+            <td><a class="btn btn-primary" role="button" href="{{url("contactbox_address_createnewadress", {"idPerson":person.id})}}">Add Address</a></td>
+        </tr>
+
+
+
+    </tbody>
+
+
+{% endblock %}
